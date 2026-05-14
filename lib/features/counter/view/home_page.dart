@@ -11,7 +11,7 @@ class MyWidget extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
-        backgroundColor: Colors.green
+        backgroundColor: Colors.green,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -20,16 +20,21 @@ class MyWidget extends ConsumerWidget {
             '$counter',
             style: const TextStyle(fontSize: 24),
           ),
-          ElevatedButton(onPressed: (){
-            ref.read(counterProvider.notifier).increment();
-          },child: const Text('+')),
+          ElevatedButton(
+            onPressed: () {
+              ref.read(counterProvider.notifier).increment();
+            },
+            child: const Text('+'),
+          ),
 
-          ElevatedButton(onPressed: (){
-            ref.read(counterProvider.notifier).decrement();
-         
-          }, child: const Text('-'),),
+          ElevatedButton(
+            onPressed: () {
+              ref.read(counterProvider.notifier).decrement();
+            },
+            child: const Text('-'),
+          ),
         ],
-      )
+      ),
     );
   }
 }
