@@ -1,40 +1,95 @@
-# Day 4 Journal — Riverpod 2 Code Generation (Naija Wallet)
+# Day 4 Journal — Riverpod 2 with Code Generation (The Debugging Arc)
 
 ## Date
 
-May 13, 2026
+May 14, 2026
 
 ---
 
-## What I worked on
+# What I worked on
 
-Today I worked on implementing modern Riverpod 2 state management in my Naija Wallet Flutter project. I moved from basic state management concepts to a more advanced architecture using code generation with `@riverpod`, AsyncValue, and Notifier-based logic.
+Today I implemented Riverpod 2 with code generation in the Naija Wallet project using Very Good CLI architecture.
 
-I built a simple counter application with two screens (Home and Details) where both screens share the same global state using a single Riverpod provider.
+I built:
+
+* a counter app using Riverpod
+* shared state across two screens
+* Riverpod code generation with `@riverpod`
+* AsyncValue-based state handling
+* notifier logic for counter updates
+
+I also spent a large part of the day debugging Android build issues, Flutter flavor configuration problems, emulator failures, and Gradle output mismatches.
+
+This became one of the most difficult but educational setup/debugging sessions so far.
 
 ---
 
-## What I achieved
+# Main concepts learned
 
-* Set up Riverpod 2 with code generation (`riverpod_annotation` + `riverpod_generator`)
-* Configured `build_runner` for automatic provider generation
-* Built a shared counter state across two screens
-* Implemented increment, decrement, and reset logic
-* Learned how AsyncValue manages loading, data, and error states
-* Understood how generated `.g.dart` files work
+* Riverpod 2 code generation
+* `@riverpod` annotations
+* build_runner workflow
+* shared global state across screens
+* AsyncValue state handling
+* Flutter flavors
+* Android build variants
+* APK generation process
+* VS Code launch configurations
+* Gradle build debugging
 
 ---
 
-## Issues I ran into
+# What I achieved
 
-### 1. Confusion with Riverpod code generation setup
+* Successfully configured Riverpod 2 with code generation
+* Generated `.g.dart` provider files successfully
+* Built a counter app using shared provider state
+* Connected HomePage and DetailsPage using one provider
+* Successfully generated a development APK
+* Fixed Android flavor configuration confusion
+* Learned how VS Code launch configurations work
+* Got the app finally running on a real Android device (TECNO BF7)
 
-At the beginning, I was confused about why multiple packages were needed (`riverpod_annotation`, `riverpod_generator`, and `build_runner`).
+---
 
-**Fix:**
-I learned that Riverpod uses code generation to reduce boilerplate and automatically create provider logic using the `@riverpod` annotation.
+# Issues I ran into
 
-I ran:
+## 1. Confusion about why two screens were needed
+
+Initially, I did not understand why the assignment specifically required two screens for a counter app.
+
+### What I learned
+
+The purpose was to demonstrate shared global state using Riverpod.
+
+Both screens watch the same provider:
+
+```dart
+ref.watch(counterProvider)
+```
+
+This allows state updates on one screen to instantly reflect on the other screen without manually passing data.
+
+---
+
+## 2. Riverpod code generation confusion
+
+I was confused about:
+
+* `riverpod_annotation`
+* `riverpod_generator`
+* `build_runner`
+* generated `.g.dart` files
+
+### Fix
+
+I learned that:
+
+* `@riverpod` triggers automatic code generation
+* build_runner creates provider boilerplate automatically
+* `.g.dart` files should never be edited manually
+
+I continuously ran:
 
 ```bash
 dart run build_runner watch
@@ -42,35 +97,22 @@ dart run build_runner watch
 
 ---
 
-### 2. Generated files not appearing initially
+## 3. Generated files not appearing
 
-Sometimes the `.g.dart` file did not show immediately.
+At some point, generated provider files were not appearing correctly.
 
-**Fix:**
+### Fix
 
-* Restarted VS Code
-* Ran `flutter clean`
-* Ran `flutter pub get`
-* Ensured build_runner was actively running
+I:
 
----
-
-### 3. Confusion about shared state between screens
-
-At first, I thought I needed to pass data from HomePage to DetailsPage manually.
-
-**Fix:**
-I learned that both screens simply use:
-
-```dart
-ref.watch(counterProvider)
-```
-
-This allows both screens to automatically stay in sync.
+* restarted VS Code
+* ran `flutter clean`
+* ran `flutter pub get`
+* ensured build_runner was running continuously
 
 ---
 
-### 4. Flutter run command mistake
+## 4. Flutter command mistakes
 
 I mistakenly ran:
 
@@ -78,74 +120,221 @@ I mistakenly ran:
 flutter run -v output
 ```
 
-which caused Flutter to look for a file called "output" and fail.
+Flutter interpreted `output` as a target file and failed.
 
-**Fix:**
-I corrected it to:
+### Error
+
+```txt
+Target file "output" not found.
+```
+
+### Fix
+
+I learned:
+
+* `-v` means verbose logging
+* `-t` means target file
+
+Correct command:
 
 ```bash
 flutter run -t lib/main_development.dart
 ```
 
-I also learned that:
-
-* `-v` is for verbose logs
-* `-t` is for specifying the entry file
-
 ---
 
-## What I learned
+## 5. Main entrypoint confusion
 
-* How Riverpod 2 code generation works
-* How to use `@riverpod` to generate providers
-* How AsyncValue manages UI states
-* How shared state works across multiple screens
-* How Notifier classes manage business logic
-* How build_runner generates provider files automatically
-* How incorrect CLI usage can break Flutter execution
-
----
-
-## Application structure
+I later discovered that Very Good CLI projects do not always use the normal:
 
 ```txt
-lib/
-├── app/
-│   └── app.dart
-├── features/
-│   └── counter/
-│       ├── providers/
-│       │   ├── counter_provider.dart
-│       │   └── counter_provider.g.dart
-│       └── view/
-│           ├── home_page.dart
-│           └── details_page.dart
+lib/main.dart
+```
+
+### Error
+
+```txt
+Target file "lib/main.dart" not found.
+```
+
+### Fix
+
+Used:
+
+```bash
+flutter run -t lib/main_development.dart
 ```
 
 ---
 
-## Key concepts understood
+## 6. Emulator completely breaking
 
-* Riverpod providers
-* Notifier-based state management
-* AsyncValue (loading, data, error)
-* Code generation with build_runner
-* Shared state across screens
-* ref.watch vs ref.read
-* Flutter CLI target files (`-t`)
+The Android emulator started failing with:
+
+```txt
+Can't find service: activity
+Can't find service: package
+```
+
+### What happened
+
+The emulator became corrupted or failed to boot Android services correctly.
+
+### Fix
+
+I switched to using my real Android device:
+
+```txt
+TECNO BF7
+```
+
+This significantly improved stability and build testing.
 
 ---
 
-## Reflection
+## 7. APK signing confusion
 
-Today was challenging but very important in understanding modern Flutter architecture.
+I accidentally tried building a release APK using:
 
-The biggest breakthrough was understanding that state is not passed between screens — instead, both screens listen to a single shared provider.
+```bash
+flutter build apk --flavor development
+```
 
-I also improved my understanding of Riverpod code generation and how it reduces boilerplate and makes state management cleaner.
+### Error
+
+```txt
+SigningConfig "release" is missing required property "storeFile"
+```
+
+### What I learned
+
+Release builds require:
+
+* keystore
+* signing configuration
+* storeFile
+* passwords
+
+### Fix
+
+I switched back to debug builds:
+
+```bash
+flutter run --flavor development -t lib/main_development.dart
+```
 
 ---
 
-## Next steps
+## 8. The biggest issue — Flutter flavor mismatch
 
-* Learn Navigation, theming, design token for day 5
+This became the main debugging battle of the day.
+
+Even though APKs were being generated successfully, Flutter kept showing:
+
+```txt
+Gradle build failed to produce an .apk file
+```
+
+### What was actually happening
+
+The project used Android flavors:
+
+* development
+* staging
+* production
+
+Flutter sometimes searched for:
+
+```txt
+app-debug.apk
+```
+
+while Gradle generated:
+
+```txt
+app-development-debug.apk
+```
+
+This mismatch caused Flutter to think the APK did not exist.
+
+---
+
+## 9. VS Code launch configuration discovery
+
+Eventually I discovered that the `.vscode/launch.json` file already contained proper launch configurations:
+
+* Launch development
+* Launch staging
+* Launch production
+
+### Final Fix
+
+Instead of manually typing long commands every time, I now:
+
+1. Run build_runner in terminal
+2. Press `F5`
+3. Select:
+
+```txt
+Launch development
+```
+
+This automatically handles:
+
+* target file
+* flavor
+* debug configuration
+
+---
+
+# Biggest lesson from today
+
+Today taught me that many software engineering problems are not caused by application code itself, but by:
+
+* tooling
+* environment setup
+* build systems
+* configuration mismatches
+* Android/Gradle behavior
+
+I also learned that debugging is a major part of software engineering and that persistence matters.
+
+---
+
+# Reflection
+
+This was one of the most frustrating Flutter sessions I have had so far, but also one of the most educational.
+
+At several points it felt like the project was completely broken, but the actual issue turned out to be:
+
+* flavor configuration mismatches
+* incorrect commands
+* emulator problems
+* APK output path confusion
+
+In the end, the app finally worked successfully.
+
+---
+
+# Current workflow
+
+## Terminal
+
+```bash
+dart run build_runner watch
+```
+
+## VS Code
+
+* Press `F5`
+* Select:
+
+```txt
+Launch development
+```
+
+---
+
+# Next steps
+
+* Learn Navigation, theming and design tokens for day 04
