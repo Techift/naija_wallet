@@ -9,6 +9,7 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final counter = ref.watch(counterProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -38,9 +39,13 @@ class HomePage extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            '$counter',
-            style: const TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+          counter.when(
+            loading: () => const CircularProgressIndicator(),
+            error: (e, _) => Text('Error: $e'),
+            data: (value) => Text(
+              '$value',
+              style: const TextStyle(fontSize: 55),
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -77,6 +82,26 @@ class HomePage extends ConsumerWidget {
                 },
                 child: const Text(
                   '-',
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
+              ),
+
+              const SizedBox(
+                width: 30,
+              ),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {
+                  ref.read(counterProvider.notifier).reset();
+                },
+                child: const Text(
+                  'Reset',
                   style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
               ),
