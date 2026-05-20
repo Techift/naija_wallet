@@ -13,7 +13,11 @@ class DetailsPage extends ConsumerWidget {
         title: const Text('Display Page'),
       ),
       body: Center(
-        child: Text('$counter',style: const TextStyle(fontSize: 55)),
+        child: counter.when(
+          loading: () => const CircularProgressIndicator(),
+          error: (e, _) => Text('Error: $e'),
+          data: (value) => Text('$value', style: const TextStyle(fontSize: 55)),
+        ),
       ),
     );
   }
