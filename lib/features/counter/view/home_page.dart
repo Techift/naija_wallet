@@ -28,7 +28,7 @@ class HomePage extends ConsumerWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DetailsPage()),
+                MaterialPageRoute<void>(builder: (context) => const DetailsPage()),
               );
             },
             icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
@@ -36,7 +36,6 @@ class HomePage extends ConsumerWidget {
         ],
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           counter.when(
