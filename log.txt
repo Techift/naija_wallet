@@ -1,0 +1,127 @@
+[ +641 ms] Artifact Instance of 'MaterialFonts' is not required, skipping update.
+[   +2 ms] Artifact Instance of 'GradleWrapper' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[   +2 ms] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'FlutterSdk' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[   +2 ms] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FontSubsetArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'PubDependencies' is not required, skipping update.
+[   +2 ms] executing: [C:\Users\esugi\Documents\flutter/] git -c log.showSignature=false log HEAD -n 1 --pretty=format:%ad --date=iso
+[ +322 ms] Exit code 0 from: git -c log.showSignature=false log HEAD -n 1 --pretty=format:%ad --date=iso
+[   +1 ms] 2026-04-24 13:54:45 -0700
+[ +110 ms] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterEngineStamp' is not required, skipping update.
+[   +3 ms] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[  +15 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[ +341 ms] executing: C:\Users\esugi\AppData\Local\Android\sdk\platform-tools\adb.exe devices -l
+[ +286 ms] List of devices attached
+           emulator-5554          device product:sdk_gphone64_x86_64 model:sdk_gphone64_x86_64 device:emu64xa transport_id:2
+[  +34 ms] C:\Users\esugi\AppData\Local\Android\sdk\platform-tools\adb.exe -s emulator-5554 shell getprop
+[ +531 ms] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[   +2 ms] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[   +3 ms] Artifact Instance of 'FlutterEngineStamp' is not required, skipping update.
+[  +24 ms] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[ +569 ms] Skipping pub get: version match.
+[+1262 ms] Skipping generating web_plugin_registrant.dart because it is up-to-date.
+[ +371 ms] Generating C:\Users\esugi\Desktop\naija_wallet\android\app\src\main\java\io\flutter\plugins\GeneratedPluginRegistrant.java
+[  +49 ms] Skipping generating GeneratedPluginRegistrant.java because it is up-to-date.
+[  +26 ms] Skipping generating generated_plugin_registrant.h because it is up-to-date.
+[   +3 ms] Skipping generating generated_plugin_registrant.cc because it is up-to-date.
+[   +7 ms] Skipping generating generated_plugins.cmake because it is up-to-date.
+[   +7 ms] Skipping generating GeneratedPluginRegistrant.h because it is up-to-date.
+[   +7 ms] Skipping generating GeneratedPluginRegistrant.m because it is up-to-date.
+[  +11 ms] Skipping generating GeneratedPluginRegistrant.swift because it is up-to-date.
+[ +324 ms] ro.hardware = ranchu
+[ +608 ms] Initializing file store
+[  +67 ms] gen_localizations: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: C:\Users\esugi\Documents\flutter\packages\flutter_tools\lib\src\build_system\targets\localizations.dart,C:\Users\esugi\Desktop\naija_wallet\l10n.yaml,C:\Users\esugi\Desktop\naija_wallet\lib\l10n\arb\app_en.arb,C:\Users\esugi\Desktop\naija_wallet\lib\l10n\arb\app_es.arb,C:\Users\esugi\Desktop\naija_wallet\lib\l10n\gen\app_localizations_en.dart,C:\Users\esugi\Desktop\naija_wallet\lib\l10n\gen\app_localizations_es.dart,C:\Users\esugi\Desktop\naija_wallet\lib\l10n\gen\app_localizations.dart}
+[ +380 ms] gen_dart_plugin_registrant: Starting due to {InvalidatedReasonKind.inputChanged: The following inputs have updated contents: C:\Users\esugi\Desktop\naija_wallet\.dart_tool\package_config.json}
+[ +374 ms] gen_dart_plugin_registrant: Complete
+[ +367 ms] gen_localizations: Complete
+[  +12 ms] Skipping target: _composite
+[   +8 ms] complete
+[  +20 ms] Launching lib/main_development.dart on sdk gphone64 x86 64 in debug mode...
+[  +31 ms] C:\Users\esugi\Documents\flutter\bin\cache\dart-sdk\bin\dartaotruntime.exe C:\Users\esugi\Documents\flutter\bin\cache\dart-sdk\bin\snapshots\frontend_server_aot.dart.snapshot --sdk-root C:\Users\esugi\Documents\flutter\bin\cache\artifacts\engine\common\flutter_patched_sdk/ --incremental --target=flutter --experimental-emit-debug-metadata -DFLUTTER_VERSION=3.41.8 -DFLUTTER_CHANNEL=stable -DFLUTTER_GIT_URL=https://github.com/flutter/flutter.git -DFLUTTER_FRAMEWORK_REVISION=02085feb3f -DFLUTTER_ENGINE_REVISION=59aa584fdf -DFLUTTER_DART_VERSION=3.11.5 --output-dill C:\Users\esugi\AppData\Local\Temp\flutter_tools.2c2e0515\flutter_tool.4cfb0dc5\app.dill --packages C:\Users\esugi\Desktop\naija_wallet\.dart_tool\package_config.json -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --filesystem-scheme org-dartlang-root --initialize-from-dill build\8966a28e48cb841c7f058d6114681da5.cache.dill.track.dill --verbosity=error --enable-experiment=alternative-invalidation-strategy
+[  +66 ms] executing: C:\Users\esugi\AppData\Local\Android\sdk\platform-tools\adb.exe -s emulator-5554 shell -x logcat -v time -t 1
+[  +37 ms] <- compile package:naija_wallet/main_development.dart
+[ +701 ms] --------- beginning of main
+           05-13 22:42:59.587 I/hwservicemanager(  213): getTransport: Cannot find entry android.hardware.audio.effect@7.1::IEffectsFactory/default in either framework or device VINTF manifest.
+[  +21 ms] executing: C:\Users\esugi\AppData\Local\Android\sdk\platform-tools\adb.exe version
+[ +476 ms] Android Debug Bridge version 1.0.41
+           Version 36.0.0-13206524
+           Installed as C:\Users\esugi\AppData\Local\Android\sdk\platform-tools\adb.exe
+           Running on Windows 10.0.19045
+[   +4 ms] executing: C:\Users\esugi\AppData\Local\Android\sdk\platform-tools\adb.exe start-server
+[ +224 ms] Building APK
+[  +28 ms] executing: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[+1183 ms] Exit code 0 from: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[        ] openjdk version "21.0.8" 2025-07-15
+           OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
+           OpenJDK 64-Bit Server VM (build 21.0.8+-14196175-b1038.72, mixed mode)
+[   +3 ms] executing: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[ +816 ms] Exit code 0 from: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[        ] openjdk version "21.0.8" 2025-07-15
+           OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
+           OpenJDK 64-Bit Server VM (build 21.0.8+-14196175-b1038.72, mixed mode)
+[  +19 ms] Top-level Gradle build file not found, skipping migration of task "clean".
+[   +3 ms] executing: C:\Program Files\Android\Android Studio\jbr\bin\java --version
+[ +988 ms] Exit code 0 from: C:\Program Files\Android\Android Studio\jbr\bin\java --version
+[        ] openjdk 21.0.8 2025-07-15
+           OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
+           OpenJDK 64-Bit Server VM (build 21.0.8+-14196175-b1038.72, mixed mode)
+[  +10 ms] Version of Java is different than impacted version, no migration attempted.
+[  +43 ms] CMake project not found, skipping support Android 15 16k page size migration.
+[  +26 ms] Using gradle from C:\Users\esugi\Desktop\naija_wallet\android\gradlew.bat.
+[  +50 ms] LocalFile: 'C:\Users\esugi\Desktop\naija_wallet\android\build.gradle.kts' doesn't provide an AGP version. Checking settings.
+[   +3 ms] LocalFile: 'C:\Users\esugi\Desktop\naija_wallet\android\settings.gradle.kts' provides AGP version: 8.12.0
+[ +139 ms] Running Gradle task 'assembleDebug'...
+[   +3 ms] executing: [C:\Users\esugi\Desktop\naija_wallet\android/] C:\Users\esugi\Desktop\naija_wallet\android\gradlew.bat --full-stacktrace --info -Pverbose=true -Ptarget-platform=android-x64 -Ptarget=C:\Users\esugi\Desktop\naija_wallet\lib/main_development.dart -Pbase-application-name=android.app.Application -Pdart-defines=RkxVVFRFUl9WRVJTSU9OPTMuNDEuOA==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049MDIwODVmZWIzZg==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NTlhYTU4NGZkZg==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMS41 -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false -Pfilesystem-scheme=org-dartlang-root assembleDebug
+[+8301 ms] Initialized native services in: C:\Users\esugi\.gradle\native
+[   +1 ms] Initialized jansi services in: C:\Users\esugi\.gradle\native
+[ +278 ms] Welcome to Gradle 9.0.0!
+[        ] Here are the highlights of this release:
+[        ]  - Configuration Cache is the recommended execution mode
+[        ]  - Gradle requires JVM 17 or higher to run
+[        ]  - Build scripts use Kotlin 2.2 and Groovy 4.0
+[        ]  - Improved Kotlin DSL script compilation avoidance
+[        ] For more details see https://docs.gradle.org/9.0.0/release-notes.html
+[+1496 ms] Running 3 shutdown hooks
+[ +474 ms] Shutdown hooks complete
+[  +53 ms] Found daemon DaemonInfo{pid=7244, address=[e357c14a-bce9-45d8-bea3-91f66f193eca port:62419, addresses:[/127.0.0.1]], state=Canceled, lastBusy=1778007200898, context=DefaultDaemonContext[uid=38d98dee-d9ec-4d9c-a4a9-cd01c2bde6fd,javaHome=C:\Program Files\Java\jdk-21,javaVersion=21,javaVendor=Oracle Corporation,daemonRegistryDir=C:\Users\esugi\.gradle\daemon,pid=7244,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=4G,-XX:ReservedCodeCacheSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx8G,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]} however its context does not match the desired criteria.
+[   +1 ms] JVM is incompatible.
+[        ] Wanted: DaemonRequestContext{jvmCriteria=C:\Program Files\Android\Android Studio\jbr (no JDK specified, using current Java home), daemonOpts=[-XX:MaxMetaspaceSize=4G, -XX:ReservedCodeCacheSize=512m, -XX:+HeapDumpOnOutOfMemoryError, -Xmx8G, -Dfile.encoding=UTF-8, -Duser.country=US, -Duser.language=en, -Duser.variant], applyInstrumentationAgent=true, nativeServicesMode=ENABLED, priority=NORMAL}
+[        ] Actual: DefaultDaemonContext[uid=38d98dee-d9ec-4d9c-a4a9-cd01c2bde6fd,javaHome=C:\Program Files\Java\jdk-21,javaVersion=21,javaVendor=Oracle Corporation,daemonRegistryDir=C:\Users\esugi\.gradle\daemon,pid=7244,idleTimeout=10800000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=4G,-XX:ReservedCodeCacheSize=512m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx8G,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+[        ]   Looking for a different daemon...
+[        ] Removing 0 daemon stop events from registry
+[        ] Starting a Gradle Daemon, 7 busy Daemons could not be reused, use --status for details
+[        ] Starting process 'Gradle build daemon'. Working directory: C:\Users\esugi\.gradle\daemon\9.0.0 Command: C:\Program Files\Android\Android Studio\jbr\bin\java.exe --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -XX:MaxMetaspaceSize=4G -XX:ReservedCodeCacheSize=512m -XX:+HeapDumpOnOutOfMemoryError -Xmx8G -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp C:\Users\esugi\.gradle\wrapper\dists\gradle-9.0.0-all\bslsdt4hlv6gkyka2jcuzrejl\gradle-9.0.0\lib\gradle-daemon-main-9.0.0.jar -javaagent:C:\Users\esugi\.gradle\wrapper\dists\gradle-9.0.0-all\bslsdt4hlv6gkyka2jcuzrejl\gradle-9.0.0\lib\agents\gradle-instrumentation-agent-9.0.0.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.0.0
+[  +56 ms] exiting with code 0
+Terminate batch job (Y/N)? 

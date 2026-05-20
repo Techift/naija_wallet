@@ -13,6 +13,11 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
+val releaseKeystorePath = System.getenv("ANDROID_KEYSTORE_PATH") ?: keystoreProperties["storeFile"] as String?
+val releaseKeyAlias = System.getenv("ANDROID_KEYSTORE_ALIAS") ?: keystoreProperties["keyAlias"] as String?
+val releaseKeyPassword = System.getenv("ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD") ?: keystoreProperties["keyPassword"] as String?
+val releaseStorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: keystoreProperties["storePassword"] as String?
+
 android {
     namespace = "com.example.verygoodcore.naija_wallet"
     compileSdk = flutter.compileSdkVersion
@@ -40,18 +45,10 @@ android {
 
     signingConfigs {
         create("release") {
-            if (System.getenv("ANDROID_KEYSTORE_PATH") != null) {
-                storeFile = file(System.getenv("ANDROID_KEYSTORE_PATH"))
-                keyAlias = System.getenv("ANDROID_KEYSTORE_ALIAS")
-                keyPassword = System.getenv("ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD")
-                storePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
-                
-            } else {
-                keyAlias = keystoreProperties["keyAlias"] as String?
-                keyPassword = keystoreProperties["keyPassword"] as String?
-                storeFile = keystoreProperties["storeFile"]?.let { file(it) }
-                storePassword = keystoreProperties["storePassword"] as String?
-            }
+            releaseKeystorePath?.let { storeFile = file(it) }
+            keyAlias = releaseKeyAlias
+            keyPassword = releaseKeyPassword
+            storePassword = releaseStorePassword
         }
     }
 
@@ -76,7 +73,9 @@ android {
 
     buildTypes {
         getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
+            if (releaseKeystorePath != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android.txt"),
