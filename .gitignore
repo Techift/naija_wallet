@@ -115,5 +115,6 @@ app.*.map.json
 lib/l10n/gen/
 
 # Development
-.envlog.txt
+.env
+log.txt
 *.log
