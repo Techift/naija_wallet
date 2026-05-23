@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naija_wallet/features/counter/view/home_page.dart';
 import 'package:naija_wallet/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -7,6 +8,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -15,9 +17,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const Scaffold(
-        body: Center(child: Text('Hello, Naija Wallet!')),
-      ),
-      );
+      home: const HomePage(),
+    );
   }
 }
