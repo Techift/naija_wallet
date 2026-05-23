@@ -116,3 +116,5 @@ lib/l10n/gen/
 
 # Development
 .env
+log.txt
+*.log
