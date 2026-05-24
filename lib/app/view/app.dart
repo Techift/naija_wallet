@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:naija_wallet/features/counter/view/home_page.dart';
+import 'package:naija_wallet/core/router/app_router.dart';
+// import 'package:naija_wallet/features/counter/view/home_page.dart';
 import 'package:naija_wallet/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -7,7 +8,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+      routerConfig: appRouter,
     );
   }
 }
