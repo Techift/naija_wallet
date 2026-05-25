@@ -5,7 +5,11 @@ class AuthService{
    isLoggedIn = true;
  }
 
- static void LogOut(){
+  static void register(){
+    isLoggedIn = true;
+  }
+
+ static void logOut(){
    isLoggedIn = false;
  }
 }
