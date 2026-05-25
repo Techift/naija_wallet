@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naija_wallet/core/router/app_router.dart';
+import 'package:naija_wallet/core/theme/app_theme.dart';
 // import 'package:naija_wallet/features/counter/view/home_page.dart';
 import 'package:naija_wallet/l10n/l10n.dart';
 
@@ -9,13 +10,24 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+      theme: AppTheme.light.copyWith(
         appBarTheme: AppBarTheme(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: AppTheme.light.colorScheme.primary,
+          foregroundColor: AppTheme.light.colorScheme.onPrimary,
+          elevation: 0,
+          centerTitle: true,
         ),
-        useMaterial3: true,
       ),
+      darkTheme: AppTheme.dark.copyWith(
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppTheme.dark.colorScheme.primary,
+          foregroundColor: AppTheme.dark.colorScheme.onPrimary,
+          elevation: 0,
+          centerTitle: true,
+        ),
+      ),
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: appRouter,
