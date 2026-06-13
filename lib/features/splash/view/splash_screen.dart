@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:naija_wallet/core/router/routes.dart';
 import 'package:naija_wallet/core/theme/app_color.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,8 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState(){
     super.initState();
 
-    Future.delayed(const Duration(seconds:5), (){
-      context.go('/login');
+    Future.delayed(const Duration(seconds:2), (){
+      if (!mounted) return;
+      context.go(Routes.login);
     });
   }
 
