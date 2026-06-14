@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:naija_wallet/core/router/routes.dart';
 import 'package:naija_wallet/features/auth/auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             ElevatedButton(onPressed: (){
               AuthService.register();
-              context.go('/');
+              context.go(Routes.home);
             },child: const Text('Register'))
           ],
         ),
