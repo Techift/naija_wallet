@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:naija_wallet/core/router/routes.dart';
 import 'package:naija_wallet/features/auth/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Center(
             child: ElevatedButton(onPressed: () {
               AuthService.login();
-              context.go('/');
+              context.go(Routes.home);
             }, child: const Text('Login'),),
           ),
           const SizedBox(height: 30),
@@ -30,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               const Text("Don't have an account?"),
               TextButton(onPressed: (){
-                context.go('/register');
+                context.go(Routes.register);
               }, child: const Text('Register'))
             ],
           )
