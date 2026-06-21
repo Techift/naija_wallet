@@ -10,24 +10,11 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final themeState = ref.watch(themeControllerProvider);
     return MaterialApp.router(
-      theme: AppTheme.light.copyWith(
-        appBarTheme: AppBarTheme(
-          backgroundColor: AppTheme.light.colorScheme.primary,
-          foregroundColor: AppTheme.light.colorScheme.onPrimary,
-          elevation: 0,
-          centerTitle: true,
-        ),
-      ),
-      darkTheme: AppTheme.dark.copyWith(
-        appBarTheme: AppBarTheme(
-          backgroundColor: AppTheme.dark.colorScheme.primary,
-          foregroundColor: AppTheme.dark.colorScheme.onPrimary,
-          elevation: 0,
-          centerTitle: true,
-        ),
-      ),
-      themeMode: ref.watch(themeProvider),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: themeState.value ?? ThemeMode.light,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
