@@ -9,7 +9,6 @@ import 'package:naija_wallet/features/splash/view/splash_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: Routes.splash,
-  // initialLocation: Routes.login,
   
   redirect:(context, state) {
     final loggedIn = AuthService.isLoggedIn;
